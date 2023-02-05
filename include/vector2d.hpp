@@ -1,5 +1,5 @@
-#ifndef CML_VECTOR3D_HPP
-#define CML_VECTOR3D_HPP
+#ifndef CML_VECTOR2D_HPP
+#define CML_VECTOR2D_HPP
 
 #include <cmath>
 
