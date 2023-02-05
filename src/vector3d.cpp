@@ -46,3 +46,13 @@ cml::Vector3 cml::Vector3::operator+(const Vector3 &v){
 cml::Vector3 cml::Vector3::operator-(const Vector3 &v){
     return Vector3(x - v.x, y - v.y, z - v.z);
 }
+
+void cml::Vector3::operator=(const Vector3& other){
+    if(this->x == other.x && this->y == other.y && this->z == other.z){
+        return;
+    }
+
+    this->x = other.x;
+    this->y = other.y;
+    this->z = other.z;
+}

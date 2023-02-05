@@ -50,3 +50,10 @@ cml::Vector2 cml::Vector2::operator-(const Vector2 &v){
     return Vector2(x - v.x, y - v.y);
 }
 
+void cml::Vector2::operator=(const Vector2 &other){
+    if(this->x == other.x && this->y == other.y){
+        return;
+    }
+    this->x = other.x;
+    this->y = other.y;
+}

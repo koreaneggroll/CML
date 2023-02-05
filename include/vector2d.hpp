@@ -26,6 +26,8 @@ namespace cml{
                 return os;
             }
 
+            void operator=(const Vector2& other);
+
     };//class Vector2;
 
     // scalar-multiplication for Vector2d

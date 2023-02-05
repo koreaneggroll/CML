@@ -23,6 +23,8 @@ namespace cml{
                 os << "[" << v.x << ", " << v.y << ", " << v.z << "]";
                 return os;
             }
+
+            void operator=(const Vector3& other);
             
 
     }; //class Vector3
