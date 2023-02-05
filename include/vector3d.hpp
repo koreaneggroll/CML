@@ -14,17 +14,10 @@ namespace cml{
 
             //constructor
             Vector3(double uX, double uY, double uZ): x(uX), y(uY), z(uZ){}
-
             //overloaded addition operator for 3D Vector
-            Vector3 operator+(const Vector3& v){
-                return Vector3(x+v.x, y+v.y, z+v.z);
-            }
-
+            Vector3 operator+(const Vector3& v);
             //overloaded subtraction operator for 3D Vector
-            Vector3 operator-(const Vector3& v){
-                return Vector3(x-v.x, y-v.y, z-v.z);
-            }
-
+            Vector3 operator-(const Vector3& v);
 
             friend std::ostream& operator<<(std::ostream& os, const Vector3& v){
                 os << "[" << v.x << ", " << v.y << ", " << v.z << "]";

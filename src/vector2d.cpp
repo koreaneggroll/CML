@@ -36,3 +36,17 @@ cml::Vector2 cml::projection(Vector2& a, Vector2& b){
 double cml::scalar_projection(Vector2& a, Vector2& b){
     return dot(b, a)/magnitude(a);
 }
+
+
+//overloading operators
+
+// overloaded addition operator for Vector2d
+cml::Vector2 cml::Vector2::operator+(const Vector2 &v){
+    return Vector2(x + v.x, y + v.y);
+}
+
+// overloaded subtraction operator for Vector2d
+cml::Vector2 cml::Vector2::operator-(const Vector2 &v){
+    return Vector2(x - v.x, y - v.y);
+}
+

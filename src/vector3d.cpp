@@ -33,3 +33,16 @@ cml::Vector3 cml::projection(Vector3 &a, Vector3 &b){
 double cml::scalar_projection(Vector3 &a, Vector3 &b){
     return dot(b, a) / magnitude(a);
 }
+
+
+//overloaded operators
+
+// overloaded addition operator for 3D Vector
+cml::Vector3 cml::Vector3::operator+(const Vector3 &v){
+    return Vector3(x + v.x, y + v.y, z + v.z);
+}
+
+// overloaded subtraction operator for 3D Vector
+cml::Vector3 cml::Vector3::operator-(const Vector3 &v){
+    return Vector3(x - v.x, y - v.y, z - v.z);
+}

@@ -17,15 +17,10 @@ namespace cml{
             Vector2(double uX, double uY):x(uX), y(uY){}
 
             //overloaded addition operator for Vector2d
-            Vector2 operator+(const Vector2& v){
-                return Vector2(x+v.x, y+v.y);
-            }
-
+            Vector2 operator+(const Vector2& v);
             //overloaded subtraction operator for Vector2d
-            Vector2 operator-(const Vector2& v){
-                return Vector2(x-v.x, y-v.y);
-            }
-
+            Vector2 operator-(const Vector2& v);
+            //overloaded << operator for Vector2d
             friend std::ostream& operator<<(std::ostream& os, const Vector2& v){
                 os << "[" << v.x << ", " << v.y << "]";
                 return os;
