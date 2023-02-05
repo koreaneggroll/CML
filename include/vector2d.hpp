@@ -2,6 +2,7 @@
 #define CML_VECTOR2D_HPP
 
 #include <cmath>
+#include <iostream>
 
 
 namespace cml{
@@ -23,6 +24,11 @@ namespace cml{
             //overloaded subtraction operator for Vector2d
             Vector2 operator-(const Vector2& v){
                 return Vector2(x-v.x, y-v.y);
+            }
+
+            friend std::ostream& operator<<(std::ostream& os, const Vector2& v){
+                os << "[" << v.x << ", " << v.y << "]";
+                return os;
             }
 
     };//class Vector2;

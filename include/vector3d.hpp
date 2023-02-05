@@ -2,6 +2,7 @@
 #define CML_VECTOR3D_HPP
 
 #include <cmath>
+#include <iostream>
 
 namespace cml{
 
@@ -22,6 +23,12 @@ namespace cml{
             //overloaded subtraction operator for 3D Vector
             Vector3 operator-(const Vector3& v){
                 return Vector3(x-v.x, y-v.y, z-v.z);
+            }
+
+
+            friend std::ostream& operator<<(std::ostream& os, const Vector3& v){
+                os << "[" << v.x << ", " << v.y << ", " << v.z << "]";
+                return os;
             }
             
 
