@@ -3,6 +3,8 @@
 
 #include <cmath>
 #include <iostream>
+#include <set>
+#include <tuple>
 
 namespace cml{
 
@@ -18,13 +20,22 @@ namespace cml{
             Vector3 operator+(const Vector3& v);
             //overloaded subtraction operator for 3D Vector
             Vector3 operator-(const Vector3& v);
-
+            //overloaded << operator for 3D Vector
             friend std::ostream& operator<<(std::ostream& os, const Vector3& v){
                 os << "[" << v.x << ", " << v.y << ", " << v.z << "]";
                 return os;
             }
 
+            //overloaded = operator for 3D Vector
             void operator=(const Vector3& other);
+            //overloaded < operator for 3D Vector
+            friend bool operator<(const Vector3& l, const Vector3& r){
+                return std::tie(l.x, l.y, l.z)
+                    < std::tie(r.x, r.y, r.z);
+            }
+            friend inline bool operator>(const Vector3& lhs, const Vector3& rhs){ return rhs < lhs; }
+            friend inline bool operator<=(const Vector3& lhs, const Vector3& rhs) { return !(lhs > rhs); }
+            friend inline bool operator>=(const Vector3& lhs, const Vector3& rhs) { return !(lhs < rhs); }
             
 
     }; //class Vector3

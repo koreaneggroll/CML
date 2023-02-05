@@ -3,6 +3,9 @@
 
 #include <cmath>
 #include <iostream>
+#include <set>
+#include <tuple>
+
 
 
 namespace cml{
@@ -26,7 +29,17 @@ namespace cml{
                 return os;
             }
 
+            //overloaded = operator for Vector2d
             void operator=(const Vector2& other);
+            //overloaded < operator for Vector2d
+            friend bool operator<(const Vector2& l, const Vector2& r){
+                return std::tie(l.x, l.y)
+                    < std::tie(r.x, r.y);
+            }
+            friend inline bool operator>(const Vector2& lhs, const Vector2& rhs){ return rhs < lhs; }
+            friend inline bool operator<=(const Vector2& lhs, const Vector2& rhs) { return !(lhs > rhs); }
+            friend inline bool operator>=(const Vector2& lhs, const Vector2& rhs) { return !(lhs < rhs); }
+
 
     };//class Vector2;
 
