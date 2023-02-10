@@ -57,3 +57,14 @@ void cml::Vector2::operator=(const Vector2 &other){
     this->x = other.x;
     this->y = other.y;
 }
+
+
+
+//other functions
+
+//swaps the values of the vector
+void cml::Vector2::swap(){
+    double temp = this->x;
+    this->x = this->y;
+    this->y = temp;
+}

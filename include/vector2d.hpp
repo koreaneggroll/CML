@@ -39,6 +39,10 @@ namespace cml{
             friend inline bool operator>(const Vector2& lhs, const Vector2& rhs){ return rhs < lhs; }
             friend inline bool operator<=(const Vector2& lhs, const Vector2& rhs) { return !(lhs > rhs); }
             friend inline bool operator>=(const Vector2& lhs, const Vector2& rhs) { return !(lhs < rhs); }
+            //other functions
+
+            //swaps the values of the vector
+            void swap();
 
 
     };//class Vector2;
