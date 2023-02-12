@@ -11,6 +11,9 @@ unsigned `var_name` <=> unsigned int `var_name`
 
 #include <cstdlib>
 #include <stdexcept>
+#include <iomanip>
+#include <iostream>
+#include <ostream>
 
 
 namespace cml{
@@ -34,8 +37,13 @@ namespace cml{
             ~Matrix();
             //copy constructor
             Matrix(const Matrix& m);
-            //assignment operator
-            Matrix& operator=(const Matrix& m);
+
+            // operator overloading
+            Matrix &operator=(const Matrix& m); //assignment operator overloading
+            Matrix operator+(const Matrix& m); //sum operator overloading
+
+            //fillRandom function
+            void fillRandom(void);
 
 
             //setters

@@ -38,6 +38,15 @@ double cml::Matrix::operator()(unsigned row, unsigned col) const {
 }
 
 
+void cml::Matrix::fillRandom(void){
+    for(unsigned r = 0; r < rows_; ++r){
+        for(unsigned c = 0; c < cols_; ++c){
+            (*this)(r, c) = (rand() % 100) / 10.0;
+        }
+    }
+}
+
+
 //setters
 
 void cml::Matrix::setValueAt(double v, unsigned r, unsigned c){
