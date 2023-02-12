@@ -95,3 +95,12 @@ cml::Matrix& cml::Matrix::operator=(const Matrix& m2){
 cml::Matrix cml::Matrix::operator+(const Matrix& m2){
     return sum(m2);
 }
+
+
+void cml::setIdentity(Matrix& matrix){
+    for(unsigned r = 0; r < matrix.rows(); ++r){
+        for(unsigned c = 0; c < matrix.cols(); ++c){
+            matrix(r, c) = (r == c) ? 1.0 : 0.0;
+        }
+    }
+}

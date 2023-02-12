@@ -39,6 +39,7 @@ namespace cml{
             Matrix(const Matrix& m);
 
             // operator overloading
+            Matrix sum(const Matrix &m2);
             Matrix &operator=(const Matrix& m2); //assignment operator overloading
             Matrix operator+(const Matrix& m2); //sum operator overloading
             friend std::ostream& operator<<(std::ostream& out, const Matrix& m){
@@ -56,21 +57,18 @@ namespace cml{
                 return out;
             } //output stream operator overloading
 
-
             //fillRandom function
             void fillRandom(void);
             //setters
             //v = value, r = row, c = column
             void setValueAt(double v, unsigned r, unsigned c);
-
-
-            Matrix sum(const Matrix& m2);
-        
-
-
-
-
+            //getters
+            unsigned rows(void) {   return this->rows_;   }
+            unsigned cols(void) {   return this->cols_;   }
     };//class Matrix
+
+
+    void setIdentity(Matrix& matrix);
 
 
 }; //namespace cml
