@@ -75,6 +75,23 @@ cml::Matrix cml::Matrix::sum(const Matrix& m2){
 }
 
 
+cml::Matrix& cml::Matrix::operator=(const Matrix& m2){
+    if(this == &m2){
+        throw std::logic_error("Matrix cannot overwrite itself");
+    }
+    if(rows_ != m2.rows_ || cols_ != m2.cols_){
+        throw std::out_of_range("Cannot assign matrix with different dimensions");
+    }
+
+    for(unsigned i = 0; i < rows_ * cols_; ++i){
+        data_[i] = m2.data_[i];
+    }
+
+    return *this;
+
+}
+
+
 cml::Matrix cml::Matrix::operator+(const Matrix& m2){
     return sum(m2);
 }

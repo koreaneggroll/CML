@@ -41,7 +41,20 @@ namespace cml{
             // operator overloading
             Matrix &operator=(const Matrix& m2); //assignment operator overloading
             Matrix operator+(const Matrix& m2); //sum operator overloading
-            friend std::ostream& operator<<(std::ostream& out, const Matrix& m); //output stream operator overloading
+            friend std::ostream& operator<<(std::ostream& out, const Matrix& m){
+                if(out){
+                    out << std::fixed << std::setprecision(1);
+                    for(unsigned r = 0; r < m.rows_; ++r){
+                        for(unsigned c = 0; c < m.cols_; ++c){
+                            out << (c > 0 ? " " : "") << std::setw(4);
+                            out << m(r, c);
+                        }
+                        out << "\n";
+                    }
+                }
+
+                return out;
+            } //output stream operator overloading
 
 
             //fillRandom function
