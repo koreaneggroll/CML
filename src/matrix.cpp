@@ -41,6 +41,7 @@ double cml::Matrix::operator()(unsigned row, unsigned col) const {
 void cml::Matrix::fillRandom(void){
     for(unsigned r = 0; r < rows_; ++r){
         for(unsigned c = 0; c < cols_; ++c){
+            //accesses the value at row `r` and column `c` and sets it to a random value
             (*this)(r, c) = (rand() % 100) / 10.0;
         }
     }
@@ -53,5 +54,27 @@ void cml::Matrix::setValueAt(double v, unsigned r, unsigned c){
     if(r >= this->rows_ || c >= this->cols_){
         throw std::out_of_range("Matrix subscript out of bounds at `void Matrix::setValueAt()`");
     }
+    //accesses the value at row `r` and column `c` and sets it to `v`
     (*this)(r, c) = v;
+}
+
+
+
+
+cml::Matrix cml::Matrix::sum(const Matrix& m2){
+    if(this->rows_ != m2.rows_ || this->cols_ != m2.cols_){
+        throw std::invalid_argument("Matrix dimensions do not match at `Matrix Matrix::sum()`");
+    }
+    Matrix ret(rows_, cols_);
+    
+    for(unsigned i = 0; i < rows_ * cols_; ++i){
+        ret.data_[i] = data_[i] + m2.data_[i];
+    }
+
+    return ret;
+}
+
+
+cml::Matrix cml::Matrix::operator+(const Matrix& m2){
+    return sum(m2);
 }

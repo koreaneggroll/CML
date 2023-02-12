@@ -39,17 +39,19 @@ namespace cml{
             Matrix(const Matrix& m);
 
             // operator overloading
-            Matrix &operator=(const Matrix& m); //assignment operator overloading
-            Matrix operator+(const Matrix& m); //sum operator overloading
+            Matrix &operator=(const Matrix& m2); //assignment operator overloading
+            Matrix operator+(const Matrix& m2); //sum operator overloading
+            friend std::ostream& operator<<(std::ostream& out, const Matrix& m); //output stream operator overloading
+
 
             //fillRandom function
             void fillRandom(void);
-
-
             //setters
-
             //v = value, r = row, c = column
             void setValueAt(double v, unsigned r, unsigned c);
+
+
+            Matrix sum(const Matrix& m2);
         
 
 
