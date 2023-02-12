@@ -48,6 +48,15 @@ void cml::Matrix::fillRandom(void){
 }
 
 
+void cml::Matrix::fill(double val){
+    for(unsigned r = 0; r < rows_; ++r){
+        for(unsigned c = 0; c < cols_; ++c){
+            (*this)(r, c) = val;
+        }
+    }
+}
+
+
 //setters
 
 void cml::Matrix::setValueAt(double v, unsigned r, unsigned c){

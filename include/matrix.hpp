@@ -61,6 +61,7 @@ namespace cml{
 
             //fillRandom function
             void fillRandom(void);
+            void fill(double val);
             //setters
             //v = value, r = row, c = column
             void setValueAt(double v, unsigned r, unsigned c);
