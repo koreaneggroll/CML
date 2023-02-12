@@ -40,8 +40,10 @@ namespace cml{
 
             // operator overloading
             Matrix sum(const Matrix &m2);
+            Matrix mult(const Matrix& m2);
             Matrix &operator=(const Matrix& m2); //assignment operator overloading
             Matrix operator+(const Matrix& m2); //sum operator overloading
+            Matrix operator*(const Matrix& m2);
             friend std::ostream& operator<<(std::ostream& out, const Matrix& m){
                 if(out){
                     out << std::fixed << std::setprecision(1);

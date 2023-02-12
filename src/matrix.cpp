@@ -75,6 +75,21 @@ cml::Matrix cml::Matrix::sum(const Matrix& m2){
 }
 
 
+cml::Matrix cml::Matrix::mult(const Matrix& m2){
+    Matrix m3(rows_, m2.cols_);
+    for(unsigned r = 0; r < rows_; ++r){
+        for(unsigned c = 0; c < m2.cols_; ++c){
+            m3(r, c) = 0.0;
+            for(unsigned k = 0; k < cols_; ++k){
+                m3(r, c) += (*this)(r, k) * m2(k, c);
+            }
+        }
+    }
+
+    return m3;
+}
+
+
 cml::Matrix& cml::Matrix::operator=(const Matrix& m2){
     if(this == &m2){
         throw std::logic_error("Matrix cannot overwrite itself");
@@ -94,6 +109,11 @@ cml::Matrix& cml::Matrix::operator=(const Matrix& m2){
 
 cml::Matrix cml::Matrix::operator+(const Matrix& m2){
     return sum(m2);
+}
+
+
+cml::Matrix cml::Matrix::operator*(const Matrix& m2){
+    return mult(m2);
 }
 
 
