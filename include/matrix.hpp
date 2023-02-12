@@ -16,68 +16,32 @@ unsigned `var_name` <=> unsigned int `var_name`
 namespace cml{
 
     //R(ows) and C(olumns)
-    template <unsigned R, unsigned C>
     class Matrix{
         private:
-            unsigned rows_;
-            unsigned cols_;
+            const unsigned rows_;
+            const unsigned cols_;
             double* data_;
 
         public:
             //constructors
-            Matrix(): rows_(R), cols_(C)
-            {
-                if(R == 0 || C == 0){
-                    throw BadIndex("Matrix constructor has 0 size");
-                }
-                data_ = new double[R * C];
-            }
+            Matrix(unsigned rows, unsigned cols);
 
             //subscript operators
-            double& operator()(unsigned row, unsigned col){
-                if(row >= rows_ || col >= cols_){
-                    throw std::out_of_range("Matrix subscript out of bounds at `double& Matrix::operator()`");
-                }
-                return data_[cols_ * row + col];
-            }
-
-            double operator()(unsigned row, unsigned col) const{
-                if(row >= rows_ || col >= cols_){
-                    throw std::out_of_range("Matrix subscript out of bounds at `double Matrix::operator()`")
-                }
-                return data_[cols_ * row + col];
-            }
+            double& operator()(unsigned row, unsigned col);
+            double operator()(unsigned row, unsigned col) const;
 
             //destructor
-            ~Matrix(){
-                delete[] data_;
-            }
+            ~Matrix();
             //copy constructor
-            Matrix(const Matrix& m): rows_(m.rows_), cols_(m.cols_)
-            {
-                data_ = new double[rows_ * cols_];
-                for(int i = 0; i < rows_ * cols_; ++i){
-                    data_[i] = m.data_[i];
-                }
-            }
+            Matrix(const Matrix& m);
             //assignment operator
             Matrix& operator=(const Matrix& m);
 
 
+            //setters
 
-
-
-
-            //other functions
-            void fillRandom(void){
-                for(int r = 0; r < this->rows_; ++r){
-                    for(int c = 0; r < this->cols_; ++c){
-                        this(r,c) = (rand() % 100) / 10.0;
-                    }
-                }
-            }
-
-
+            //v = value, r = row, c = column
+            void setValueAt(double v, unsigned r, unsigned c);
         
 
 
