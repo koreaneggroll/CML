@@ -84,6 +84,14 @@ cml::Vector2 cml::Vector2::operator*(const float s)const{
     return Vector2(this->x*s, this->y*s);
 }
 
+double cml::Vector2::operator*(const Vector2& v)const{
+    return x*v.x+y*v.y;
+}
+
+double cml::Vector2::dot(const Vector2& v)const{
+    return x*v.x+y*v.y;
+}
+
 void cml::Vector2::operator*=(const float s){
     this->x *= s;
     this->y *= s;
@@ -94,6 +102,24 @@ cml::Vector2 cml::Vector2::operator/(const float s)const{
     return Vector2(this->x/s, this->y/s);
 }
 
+void cml::Vector2::operator/=(const float s){
+    this->x /= s;
+    this->y /= s;
+}
+
+// cml::Vector2 cml::Vector2::operator%(const Vector2& v)const{
+//     return Vector2(y*v.z-z*v.y,
+//                        z*v.x-x*v.z,
+//                        x*v.y-y*v.x);
+// }
+
+// void cml::Vector2::operator%=(const Vector2& v){
+
+// }
+
+// cml::Vector2 cml::Vector2::cross(const Vector2& v)const{
+
+// }
 
 cml::Vector2& cml::Vector2::operator=(const Vector2 &other){
     this->x = other.x;
