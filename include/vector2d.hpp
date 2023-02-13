@@ -16,53 +16,53 @@ namespace cml{
             double x; //x-component of vector
             double y; //y-component of vector
 	    
-	    //default constructor
-	    Vector2();
-	    
+            //default constructor
+            Vector2();
+            
             //constructor
             Vector2(double uX, double uY);
 
-	    //destructor
-	    ~Vector2();
+            //destructor
+            ~Vector2();
 
-        //overloaded addition operator for Vector2d
-        Vector2 operator+(const Vector2& v)const;
-	    void operator+=(const Vector2& v);
-        //overloaded subtraction operator for Vector2d
-        Vector2 operator-(const Vector2& v)const;
-	    void operator-=(const Vector2& v);
-	    //overloaded multiplication operator for Vector2d using scalar function
-	    Vector2 operator*(const float s) const;
-        double operator*(const Vector2& v)const;
-        double dot(const Vector2& v)const;
-	    void operator*=(const float s);
-        //overloaded division operator for Vector2d
-        Vector2 operator/(const float s) const;
-        void operator/=(const float s);
-        //% operator overloaded as cross product
-        Vector2 operator%(const Vector2& v)const;
-        void operator%=(const Vector2& v);
-        Vector2 cross(const Vector2& v)const;
-        //overloaded << operator for Vector2d
-        friend std::ostream& operator<<(std::ostream& os, const Vector2& v){
-            os << "[" << v.x << ", " << v.y << "]";
-            return os;
-        }
+            //overloaded addition operator for Vector2d
+            Vector2 operator+(const Vector2& v)const;
+            void operator+=(const Vector2& v);
+            //overloaded subtraction operator for Vector2d
+            Vector2 operator-(const Vector2& v)const;
+            void operator-=(const Vector2& v);
+            //overloaded multiplication operator for Vector2d using scalar function
+            Vector2 operator*(const float s) const;
+            double operator*(const Vector2& v)const;
+            double dot(const Vector2& v)const;
+            void operator*=(const float s);
+            //overloaded division operator for Vector2d
+            Vector2 operator/(const float s) const;
+            void operator/=(const float s);
+            //% operator overloaded as cross product
+            Vector2 operator%(const Vector2& v)const;
+            void operator%=(const Vector2& v);
+            Vector2 cross(const Vector2& v)const;
+            //overloaded << operator for Vector2d
+            friend std::ostream& operator<<(std::ostream& os, const Vector2& v){
+                os << "[" << v.x << ", " << v.y << "]";
+                return os;
+            }
 
-        //overloaded = operator for Vector2d
-        Vector2& operator=(const Vector2& other);
-        //overloaded < operator for Vector2d
-        friend bool operator<(const Vector2& l, const Vector2& r){
-            return std::tie(l.x, l.y)
-                < std::tie(r.x, r.y);
-        }
-        friend inline bool operator>(const Vector2& lhs, const Vector2& rhs){ return rhs < lhs; }
-        friend inline bool operator<=(const Vector2& lhs, const Vector2& rhs) { return !(lhs > rhs); }
-        friend inline bool operator>=(const Vector2& lhs, const Vector2& rhs) { return !(lhs < rhs); }
-        //other functions
+            //overloaded = operator for Vector2d
+            Vector2& operator=(const Vector2& other);
+            //overloaded < operator for Vector2d
+            friend bool operator<(const Vector2& l, const Vector2& r){
+                return std::tie(l.x, l.y)
+                    < std::tie(r.x, r.y);
+            }
+            friend inline bool operator>(const Vector2& lhs, const Vector2& rhs){ return rhs < lhs; }
+            friend inline bool operator<=(const Vector2& lhs, const Vector2& rhs) { return !(lhs > rhs); }
+            friend inline bool operator>=(const Vector2& lhs, const Vector2& rhs) { return !(lhs < rhs); }
+            //other functions
 
-        //swaps the values of the vector
-        void swap();
+            //swaps the values of the vector
+            void swap();
 
     };//class Vector2;
 
