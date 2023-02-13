@@ -15,22 +15,36 @@ namespace cml{
         public:
             double x; //x-component of vector
             double y; //y-component of vector
-
+	    
+	    //default constructor
+	    Vector2();
+	    
             //constructor
-            Vector2(double uX, double uY):x(uX), y(uY){}
+            Vector2(double uX, double uY);
 
-            //overloaded addition operator for Vector2d
-            Vector2 operator+(const Vector2& v);
-            //overloaded subtraction operator for Vector2d
-            Vector2 operator-(const Vector2& v);
-            //overloaded << operator for Vector2d
-            friend std::ostream& operator<<(std::ostream& os, const Vector2& v){
-                os << "[" << v.x << ", " << v.y << "]";
-                return os;
-            }
+	    //destructor
+	    ~Vector2();
+
+        //overloaded addition operator for Vector2d
+        Vector2 operator+(const Vector2& v)const;
+	    void operator+=(const Vector2& v);
+        //overloaded subtraction operator for Vector2d
+        Vector2 operator-(const Vector2& v)const;
+	    void operator-=(const Vector2& v);
+	    //overloaded multiplication operator for Vector2d using scalar function
+	    Vector2 operator*(const float s) const;
+	    void operator*=(const float s);
+        //overloaded division operator for Vector2d
+        Vector2 operator/(const float s) const;
+        void operator/=(const float s);
+        //overloaded << operator for Vector2d
+        friend std::ostream& operator<<(std::ostream& os, const Vector2& v){
+            os << "[" << v.x << ", " << v.y << "]";
+            return os;
+        }
 
             //overloaded = operator for Vector2d
-            void operator=(const Vector2& other);
+            Vector2& operator=(const Vector2& other);
             //overloaded < operator for Vector2d
             friend bool operator<(const Vector2& l, const Vector2& r){
                 return std::tie(l.x, l.y)
@@ -44,10 +58,9 @@ namespace cml{
             //swaps the values of the vector
             void swap();
 
-
     };//class Vector2;
 
-    // scalar-multiplication for Vector2d
+    //scalar multiplication for a vector
     Vector2 scalar(double sc, Vector2& v);
     // cross-operator for Vector2d
     Vector2 cross(Vector2& a, Vector2& b);
