@@ -126,6 +126,16 @@ cml::Matrix cml::Matrix::operator*(const Matrix& m2){
 }
 
 
+unsigned cml::Matrix::rows(void){
+    return this->rows_;
+}
+
+
+unsigned cml::Matrix::cols(void){
+    return this->cols_;
+}
+
+
 void cml::setIdentity(Matrix& matrix){
     for(unsigned r = 0; r < matrix.rows(); ++r){
         for(unsigned c = 0; c < matrix.cols(); ++c){
@@ -133,3 +143,6 @@ void cml::setIdentity(Matrix& matrix){
         }
     }
 }
+
+
+
