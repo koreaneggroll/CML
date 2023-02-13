@@ -14,12 +14,35 @@ namespace cml{
             double y; //y-component of vector
             double z; //z-component of vector
 
+            //default constructor
+            Vector3();
             //constructor
-            Vector3(double uX, double uY, double uZ): x(uX), y(uY), z(uZ){}
+            Vector3(double uX, double uY, double uZ);
+            //copy constructor
+            Vector3(const Vector3& v);
+            //destructor
+            ~Vector3();
+
             //overloaded addition operator for 3D Vector
-            Vector3 operator+(const Vector3& v);
+            Vector3 operator+(const Vector3& v)const;
+            void operator+=(const Vector3& v);
             //overloaded subtraction operator for 3D Vector
-            Vector3 operator-(const Vector3& v);
+            Vector3 operator-(const Vector3& v) const;
+            void operator-=(const Vector3& v);
+            //overloaded multiplication operator
+            Vector3 operator*(const float s) const;
+            //dot product operator overloading
+            double operator*(const Vector3& v)const;
+            double dot(const Vector3& v)const;
+            void operator*=(const float s);
+            //division operator overloading
+            Vector3 operator/(const float s) const;
+            void operator/=(const float s);
+            //cross product operator overloading
+            Vector3 operator%(const Vector3& v)const;
+            void operator%=(const Vector3&v);
+            Vector3 cross(const Vector3& v)const;
+
             //overloaded << operator for 3D Vector
             friend std::ostream& operator<<(std::ostream& os, const Vector3& v){
                 os << "[" << v.x << ", " << v.y << ", " << v.z << "]";
@@ -27,7 +50,7 @@ namespace cml{
             }
 
             //overloaded = operator for 3D Vector
-            void operator=(const Vector3& other);
+            Vector3 operator=(const Vector3& v);
             //overloaded < operator for 3D Vector
             friend bool operator<(const Vector3& l, const Vector3& r){
                 return std::tie(l.x, l.y, l.z)

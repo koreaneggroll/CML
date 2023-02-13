@@ -1,5 +1,11 @@
 #include "../include/vector3d.hpp"
 
+
+cml::Vector3::Vector3(): x(0.0f), y(0.0f), z(0.0f){}
+cml::Vector3::Vector3(double uX, double uY, double uZ): x(uX), y(uY), z(uZ){}
+cml::Vector3::Vector3(const Vector3& v): x(v.x), y(v.y), z(v.z){}
+cml::Vector3::~Vector3(){}
+
 cml::Vector3 cml::scalar(double sc, Vector3 &v){
     return Vector3(sc*v.x, sc*v.y, sc*v.z);
 }
@@ -38,21 +44,75 @@ double cml::scalar_projection(Vector3 &a, Vector3 &b){
 //overloaded operators
 
 // overloaded addition operator for 3D Vector
-cml::Vector3 cml::Vector3::operator+(const Vector3 &v){
+cml::Vector3 cml::Vector3::operator+(const Vector3 &v)const{
     return Vector3(x + v.x, y + v.y, z + v.z);
 }
 
+void cml::Vector3::operator+=(const Vector3& v){
+    this->x += v.x;
+    this->y += v.y;
+    this->z += v.z;
+}
+
 // overloaded subtraction operator for 3D Vector
-cml::Vector3 cml::Vector3::operator-(const Vector3 &v){
+cml::Vector3 cml::Vector3::operator-(const Vector3 &v)const{
     return Vector3(x - v.x, y - v.y, z - v.z);
 }
 
-void cml::Vector3::operator=(const Vector3& other){
-    if(this->x == other.x && this->y == other.y && this->z == other.z){
-        return;
-    }
+void cml::Vector3::operator-=(const Vector3& v){
+    this->x -= v.x;
+    this->y -= v.y;
+    this->z -= v.z;
+}
 
-    this->x = other.x;
-    this->y = other.y;
-    this->z = other.z;
+cml::Vector3 cml::Vector3::operator*(const float s)const{
+    return Vector3(this->x*s, this->y*s, this->z*s);
+}
+
+double cml::Vector3::operator*(const Vector3& v)const{
+    return x*v.x+y*v.y+z*v.z;
+}
+
+double cml::Vector3::dot(const Vector3& v) const{
+    return x*v.x+y*v.y+z*v.z;
+}
+
+void cml::Vector3::operator*=(const float s){
+    this->x *= s;
+    this->y *= s;
+    this->z *= s;
+}
+
+cml::Vector3 cml::Vector3::operator/(const float s)const{
+    return Vector3(this->x/s, this->y/s, this->z/s);
+}
+
+void cml::Vector3::operator/=(const float s){
+    this->x /= s;
+    this->y /= s;
+    this->z /= s;
+}
+
+cml::Vector3 cml::Vector3::operator%(const Vector3& v)const{
+    return Vector3 (y*v.z-z*v.y,
+                    z*v.x-x*v.z,
+                    x*v.y-y*v.x);
+}
+
+void cml::Vector3::operator%=(const Vector3& v){
+    *this=cross(v);
+}
+
+cml::Vector3 cml::Vector3::cross(const Vector3& v)const{
+    return Vector3 (y*v.z-z*v.y,
+                    z*v.x-x*v.z,
+                    x*v.y-y*v.x);
+}
+
+cml::Vector3 cml::Vector3::operator=(const Vector3& v){
+    this->x = v.x;
+    this->y = v.y;
+    this->z = v.z;
+
+    return *this;
 }
