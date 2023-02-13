@@ -2,7 +2,7 @@
 
 
 double cml::hypot(double catheti1, double catheti2){
-    return sqrt(pow(catheti1, 2), pow(catheti2, 2));
+    return sqrt(pow(catheti1, 2) + pow(catheti2, 2));
 }
 
 float cml::isqrt(float number){
@@ -17,4 +17,6 @@ float cml::isqrt(float number){
     y = *(float*)&i;
     y = y * (threehalfs - (x2 * y * y));
     y = y * (threehalfs - (x2 * y * y));
+
+    return y;
 }

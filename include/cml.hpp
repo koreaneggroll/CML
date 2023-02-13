@@ -1,11 +1,7 @@
-#ifndef CML_HPP
-#define CML_HPP
+#ifndef CML_CML_HPP
+#define CML_CML_HPP
 
-
-#include "./include/vector2d.hpp"
-#include "./include/vector3d.hpp"
-#include "./include/constants.hpp"
-#include "./include/matrix.hpp"
+#include <cmath>
 
 
 namespace cml{
@@ -19,4 +15,4 @@ namespace cml{
 };//namespace cml
 
 
-#endif //CML_HPP
+#endif //CML_CML_HPP
