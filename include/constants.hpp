@@ -10,11 +10,19 @@
 namespace cml{
 
     //21 digits of pi (20 after decimal point)
-    static constexpr double pi = 3.14159265358979323846f;
+    static constexpr long double pi = 3.14159265358979323846;
+    //PI/2
+    static constexpr long double pi_2 = pi/2;
+    //PI/4
+    static constexpr long double pi_4 = pi/4;
+    //1/PI
+    static constexpr long double one_over_pi = 1/pi;
+    //2/PI
+    static constexpr long double two_over_pi = 2/pi;
     //multiplication value to convert degrees to radians
-    static constexpr double degreesToRadians = pi / 180.0f;
+    static constexpr long double degreesToRadians = pi / 180.0f;
     //multiplication value to convert radians to degrees
-    static constexpr double radiansToDegrees = 180.0f / pi;
+    static constexpr long double radiansToDegrees = 180.0f / pi;
 
     //2D vector of zeros
     static const cml::Vector2 zeros2f(0.0f, 0.0f);
@@ -42,6 +50,7 @@ namespace cml{
     static const cml::Matrix eMatrix3D(3, 3);
     //Empty 4D Matrix
     static const cml::Matrix eMatrix4D(4, 4);
+
 
 };//namespace cml
 
