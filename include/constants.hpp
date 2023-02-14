@@ -24,6 +24,9 @@ namespace cml{
     //multiplication value to convert radians to degrees
     static constexpr long double radiansToDegrees = 180.0f / pi;
 
+    //eulers number
+    static constexpr long double e = 2.71828182845904523536;
+
     //2D vector of zeros
     static const cml::Vector2 zeros2f(0.0f, 0.0f);
     //2D vector of ones
