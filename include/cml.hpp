@@ -4,14 +4,11 @@
 #include "./sqrt.hpp"
 #include "./pow.hpp"
 #include "./isqrt.hpp"
-
-
-namespace cml{
-
-   //functions
-    //calculates the hypot. of a right triangle
-    double hypot(double catheti1, double catheti2);
-};//namespace cml
+#include "./hypot.hpp"
+#include "./vector2d.hpp"
+#include "./vector3d.hpp"
+#include "./constants.hpp"
+#include "./matrix.hpp"
 
 
 #endif //CML_CML_HPP
