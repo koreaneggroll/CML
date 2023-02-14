@@ -6,7 +6,6 @@
 
 
 namespace cml{
-   
 
    //functions
     //calculates the hypot. of a right triangle
