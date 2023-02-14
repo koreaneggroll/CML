@@ -6,6 +6,15 @@ C Maths Library
 * 2D Vector
 * 3D Vector
 * Matrices
+* Math functions
+
+
+## Math functions implemented:
+ * `pow()`
+ * `sqrt()`
+ * `isqrt()`
+ * `hypot()`
+
 
 
 ## Examples:
