@@ -1,7 +1,8 @@
 #ifndef CML_CML_HPP
 #define CML_CML_HPP
 
-#include <cmath>
+#include "./sqrt.hpp"
+#include "./pow.hpp"
 
 
 namespace cml{

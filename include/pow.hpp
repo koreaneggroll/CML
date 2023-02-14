@@ -1,7 +1,6 @@
 #ifndef CML_POW_HPP
 #define CML_POW_HPP
 
-
 namespace cml{
 
     //`pow` function

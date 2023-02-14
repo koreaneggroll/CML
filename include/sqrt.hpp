@@ -4,7 +4,7 @@
 #include "./pow.hpp"
 
 namespace cml{
-    float srqt(float a);
+    float sqrt(float a);
 };//namespace cml
 
 
