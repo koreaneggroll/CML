@@ -3,6 +3,7 @@
 
 #include "./sqrt.hpp"
 #include "./pow.hpp"
+#include "./isqrt.hpp"
 
 
 namespace cml{
@@ -10,10 +11,6 @@ namespace cml{
    //functions
     //calculates the hypot. of a right triangle
     double hypot(double catheti1, double catheti2);
-    //fast inverse square root
-    float isqrt(float number);
-    
-
 };//namespace cml
 
 
