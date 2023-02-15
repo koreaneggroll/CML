@@ -14,7 +14,7 @@ C Maths Library
  * `sqrt()`
  * `isqrt()`
  * `hypot()`
-
+ * `abs()`
 
 
 ## Examples:
