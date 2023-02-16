@@ -15,6 +15,8 @@ C Maths Library
  * `isqrt()`
  * `hypot()`
  * `abs()`
+ * `exp()`
+ * `exp2()`
 
 
 ## Examples:
