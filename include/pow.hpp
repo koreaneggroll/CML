@@ -3,7 +3,10 @@
 
 extern "C"{
     float my_powf(float a, float b);
-    float cml_my_exp(float x);
+
+    float cml_my_expf(float x);
+
+    float cml_my_exp2f(float x);
 }
 
 namespace cml{
@@ -12,6 +15,8 @@ namespace cml{
     float pow(float a, float b);
     //e^x
     float exp(float x);
+    //2^x
+    float exp2(float x);
 
 };//namespace cml
 

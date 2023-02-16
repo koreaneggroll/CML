@@ -206,10 +206,10 @@ e = 2.7182818F;
 
 #ifdef __STDC__
     float
-    cml_my_exp(float x)
+    cml_my_expf(float x)
 #else
     float
-    cml_my_exp(x)
+    cml_my_expf(x)
     float x;
 #endif
 {
@@ -217,11 +217,25 @@ e = 2.7182818F;
 }
 
 
+#ifdef __STDC__
+    float cml_my_exp2f(float x)
+#else
+    float cml_my_exp2f(x)
+    float x;
+#endif
+{
+    return my_powf(2, x);
+}
+
 
 float cml::pow(float a, float b){
     return my_powf(a, b);
 }
 
 float cml::exp(float x){
-    return cml_my_exp(x);
+    return cml_my_expf(x);
+}
+
+float cml::exp2(float x){
+    return cml_my_exp2f(x);
 }
