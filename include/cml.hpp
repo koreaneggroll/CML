@@ -7,7 +7,6 @@
 #include "./hypot.hpp"
 #include "./abs.hpp"
 #include "./bin.hpp"
-#include "./exp.hpp"
 #include "./vector2d.hpp"
 #include "./vector3d.hpp"
 #include "./constants.hpp"
