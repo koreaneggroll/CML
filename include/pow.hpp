@@ -7,6 +7,8 @@ extern "C"{
     float cml_my_expf(float x);
 
     float cml_my_exp2f(float x);
+
+    float cml_my_expm1(float x);
 }
 
 namespace cml{
@@ -17,6 +19,8 @@ namespace cml{
     float exp(float x);
     //2^x
     float exp2(float x);
+    //e^x - 1
+    float expm1(float x);
 
 };//namespace cml
 
