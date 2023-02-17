@@ -1,23 +1,19 @@
 # CML
-C Maths Library
+### C++ Maths Library written for quickness and also efficiency and accuracy 
 
 
 ## Implemented:
 * 2D Vector
 * 3D Vector
-* Matrices
+* Matrix
 * Math functions
 
+<br/>
+<br/>
 
-## Math functions implemented:
- * `pow()`
- * `sqrt()`
- * `isqrt()`
- * `hypot()`
- * `abs()`
- * `exp()`
- * `exp2()`
+## Docs can be found in the `docs/` folder
 
+<br/>
 
 ## Examples:
 * No. 1:
