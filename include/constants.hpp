@@ -11,6 +11,8 @@ namespace cml{
 
     //21 digits of pi (20 after decimal point)
     static constexpr long double pi = 3.14159265358979323846;
+    //2 PI
+    static constexpr long double twopi = pi * 2;
     //PI/2
     static constexpr long double pi_2 = pi/2;
     //PI/4
