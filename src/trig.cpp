@@ -678,6 +678,7 @@ float cml::atrig::cos(float angle){
 }
 
 float cml::atrig::sin(float angle){
+
     return FTA::sin(angle);
 }
 
