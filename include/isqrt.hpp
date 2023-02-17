@@ -1,7 +1,6 @@
 #ifndef CML_ISQRT_HPP
 #define CML_ISQRT_HPP
 
-
 /*
 
 Returns an approximation of the inverse square root
