@@ -11,6 +11,7 @@
 #include "./vector3d.hpp"
 #include "./constants.hpp"
 #include "./matrix.hpp"
+#include "./trig.hpp"
 
 
 #endif //CML_CML_HPP

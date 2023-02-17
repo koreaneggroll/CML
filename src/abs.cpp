@@ -23,10 +23,26 @@
 }
 
 
+#ifdef __STDC__
+    float cml_my_fdim(float x, float y)
+#else
+    float cml_my_fdim(x, y)
+    float x, y;
+#endif
+{
+    return cml_my_absf(x - y);
+}
+
+
 int cml::abs(int x){
     return cml_my_absi(x);
 }
 
 float cml::abs(float x){
     return cml_my_absf(x);
+}
+
+
+float cml::fdim(float x, float y){
+    return cml_my_fdim(x, y);
 }
