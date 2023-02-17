@@ -27,7 +27,7 @@
  * * `abs(x)` -> returns absolute value of _**x**_
  * * `bin(x)` -> returns binary value of decimal number _**x**_
  * * `hypot(a, b)` -> returns the hypotenuse of a right triangle if given the 2 catheti
- * * `isqrt(x)` -> returns the inverse square root i.e. $\frac{1}{sqrt(x)}$
+ * * `isqrt(x)` -> returns the fast inverse square root i.e. $\frac{1}{sqrt(x)}$
  * * `pow(a, b)` -> returns $a^b$
  * * `sqrt(x)` -> returns $sqrt{x}$ 
  * * `exp(x)` -> returns $e^x$ $\overrightarrow{}$ $e = 2.71828182845904523536$ `(eulers number)`
