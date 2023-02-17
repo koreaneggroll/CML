@@ -23,15 +23,22 @@
  * * `setValueAt()` does exactly what the name suggests
 
 ## Math Functions
- * Simple mathematics functions
- * * `abs(x)` -> returns absolute value of _**x**_
- * * `bin(x)` -> returns binary value of decimal number _**x**_
- * * `hypot(a, b)` -> returns the hypotenuse of a right triangle if given the 2 catheti
- * * `isqrt(x)` -> returns the fast inverse square root i.e. $\frac{1}{sqrt(x)}$
- * * `pow(a, b)` -> returns $a^b$
- * * `sqrt(x)` -> returns $sqrt{x}$ 
- * * `exp(x)` -> returns $e^x$ $\overrightarrow{}$ $e = 2.71828182845904523536$ `(eulers number)`
- * * `exp2(x)` -> returns $2^x$
+ * ### Mathematics functions
+   *  `abs(x)` -> returns absolute value of _**x**_
+   *  `bin(x)` -> returns binary value of decimal number _**x**_
+   *  `hypot(a, b)` -> returns the hypotenuse of a right triangle if given the 2 catheti
+   *  `isqrt(x)` -> returns the fast inverse square root i.e. $\frac{1}{sqrt(x)}$
+   *  `pow(a, b)` -> returns $a^b$
+   *  `sqrt(x)` -> returns $sqrt{x}$ 
+   *  `exp(x)` -> returns $e^x$ $\overrightarrow{}$ $e = 2.71828182845904523536$ `(eulers number)`
+   *  `exp2(x)` -> returns $2^x$
+   *  `fma(x, y, z)` -> returns $x * y + z$
+   *  `fdim(x, y)` -> returns the positive difference between two numbers i.e. $|x-y|$
+  
+ * ### Trigonometric functions
+   * `sin(angle)` -> returns $\sin{x}$
+   * `cos(angle)` -> returns $\cos{x}$
+   * `atan2(angle)` -> returns $atan2{x}$
 
 
 ## Mathematical Constants (constants.hpp)
