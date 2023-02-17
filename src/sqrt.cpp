@@ -1,12 +1,13 @@
 #include "../include/sqrt.hpp"
 
-#ifdef __STDC__
-static const double
-#else
-static double
-#endif
-SQRT_EXP = 0.5;
 
 float cml::sqrt(float a){
-    return pow(a, SQRT_EXP);
+    //using sqrt implementation in the FASTTRIG.H library
+    return FT::sqrt(a);
 }
+
+
+float cml::asqrt(float a){
+    return FTA::sqrt(a);
+}
+
