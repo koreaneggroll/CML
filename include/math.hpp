@@ -12,14 +12,22 @@
 #include "./sqrt.hpp"
 #include "./radians_degrees.hpp"
 
-
+#include <type_traits>
 
 namespace cml{
-    int max(int a, int b);
-    float max(float a, float b);
+    template<
+    typename T, //real type
+    typename = typename std::enable_if<std::is_arithmetic<T>::value, T>::type>
+    T max(T a, T b){
+        return (a > b ? a : b);
+    }
 
-    int min(int a, int b);
-    float min(float a, float b);
+    template<
+    typename T, //real type
+    typename = typename std::enable_if<std::is_arithmetic<T>::value, T>::type>
+    T min(T a, T b){
+        return (a > b ? b : a);
+    }
 };
 
 
