@@ -661,27 +661,27 @@ void cml::trig::sincos(float angle, float *sin, float *cos){
 
 
 //CML ACCURATE TRIG NAMESPACE
-float cml::trig::length(float x, float y){
+float cml::atrig::length(float x, float y){
     return FTA::length(x, y);
 }
 
-float cml::trig::length(float x, float y, float z){
+float cml::atrig::length(float x, float y, float z){
     return FTA::length(x, y, z);
 }
 
-float cml::trig::atan2(float y, float x){
+float cml::atrig::atan2(float y, float x){
     return FTA::atan2(y, x);
 }
 
-float cml::trig::cos(float angle){
+float cml::atrig::cos(float angle){
     return FTA::cos(angle);
 }
 
-float cml::trig::sin(float angle){
+float cml::atrig::sin(float angle){
 
     return FTA::sin(angle);
 }
 
-void cml::trig::sincos(float angle, float *sin, float *cos){
+void cml::atrig::sincos(float angle, float *sin, float *cos){
     return FTA::sincos(angle, sin, cos);
 }
