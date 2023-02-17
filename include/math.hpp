@@ -13,4 +13,14 @@
 #include "./radians_degrees.hpp"
 
 
+
+namespace cml{
+    int max(int a, int b);
+    float max(float a, float b);
+
+    int min(int a, int b);
+    float min(float a, float b);
+};
+
+
 #endif //CML_MATH_HPP
