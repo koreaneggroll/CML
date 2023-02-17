@@ -7,6 +7,8 @@
 #include "./hypot.hpp"
 #include "./abs.hpp"
 #include "./bin.hpp"
+#include "./fma.hpp"
+#include "./radians_degrees.hpp"
 #include "./vector2d.hpp"
 #include "./vector3d.hpp"
 #include "./constants.hpp"
