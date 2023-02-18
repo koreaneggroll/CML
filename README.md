@@ -1,5 +1,5 @@
 # CML
-### C++ Maths Library written for quickness and also efficiency and accuracy 
+### C++ Maths Library
 
 
 ## Implemented:
