@@ -13,14 +13,14 @@ namespace cml{
     //2D Vector
     class Vector2{
         public:
-            double x; //x-component of vector
-            double y; //y-component of vector
+            float x; //x-component of vector
+            float y; //y-component of vector
 	    
             //default constructor
             Vector2();
             
             //constructor
-            Vector2(double uX, double uY);
+            Vector2(float uX, float uY);
 
             //destructor
             ~Vector2();
@@ -33,8 +33,8 @@ namespace cml{
             void operator-=(const Vector2& v);
             //overloaded multiplication operator for Vector2d using scalar function
             Vector2 operator*(const float s) const;
-            double operator*(const Vector2& v)const;
-            double dot(const Vector2& v)const;
+            float operator*(const Vector2& v)const;
+            float dot(const Vector2& v)const;
             void operator*=(const float s);
             //overloaded division operator for Vector2d
             Vector2 operator/(const float s) const;
@@ -67,21 +67,21 @@ namespace cml{
     };//class Vector2;
 
     //scalar multiplication for a vector
-    Vector2 scalar(double sc, Vector2& v);
+    Vector2 scalar(float sc, Vector2& v);
     // cross-operator for Vector2d
     Vector2 cross(Vector2& a, Vector2& b);
     // dot-operator for Vector2d
-    double dot(Vector2& a, Vector2& b);
+    float dot(Vector2& a, Vector2& b);
     // magnitude for Vector2D
-    double magnitude(Vector2& v);
+    float magnitude(Vector2& v);
     // the angle between a vector and the positive x-axis
-    double angle(Vector2& v);
+    float angle(Vector2& v);
     // unit of vector2d
     Vector2 unit(Vector2& v);
     // computing the projection of `b` onto `a`
     Vector2 projection(Vector2& a, Vector2& b);
     //computing the scalar projection of `b` onto `a`
-    double scalar_projection(Vector2& a, Vector2& b);
+    float scalar_projection(Vector2& a, Vector2& b);
 
 
 };//namespace cml

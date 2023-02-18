@@ -10,14 +10,14 @@ namespace cml{
 
     class Vector3{
         public:
-            double x; //x-component of vector
-            double y; //y-component of vector
-            double z; //z-component of vector
+            float x; //x-component of vector
+            float y; //y-component of vector
+            float z; //z-component of vector
 
             //default constructor
             Vector3();
             //constructor
-            Vector3(double uX, double uY, double uZ);
+            Vector3(float uX, float uY, float uZ);
             //copy constructor
             Vector3(const Vector3& v);
             //destructor
@@ -32,8 +32,8 @@ namespace cml{
             //overloaded multiplication operator
             Vector3 operator*(const float s) const;
             //dot product operator overloading
-            double operator*(const Vector3& v)const;
-            double dot(const Vector3& v)const;
+            float operator*(const Vector3& v)const;
+            float dot(const Vector3& v)const;
             void operator*=(const float s);
             //division operator overloading
             Vector3 operator/(const float s) const;
@@ -64,21 +64,21 @@ namespace cml{
     }; //class Vector3
 
     // scalar-multiplication for Vector3d
-    Vector3 scalar(double sc, Vector3 &v);
+    Vector3 scalar(float sc, Vector3 &v);
     // cross-operator for Vector3d
     Vector3 cross(Vector3 &a, Vector3 &b);
     // dot-operator for Vector3d
-    double dot(Vector3 &a, Vector3 &b);
+    float dot(Vector3 &a, Vector3 &b);
     // magnitude for Vector3D
-    double magnitude(Vector3 &v);
+    float magnitude(Vector3 &v);
     // the angle between 2 vectors
-    double angle(Vector3 &a, Vector3& b);
+    float angle(Vector3 &a, Vector3& b);
     // unit of Vector3d
     Vector3 unit(Vector3 &v);
     // computing the projection of `b` onto `a`
     Vector3 projection(Vector3 &a, Vector3 &b);
     // computing the scalar projection of `b` onto `a`
-    double scalar_projection(Vector3 &a, Vector3 &b);
+    float scalar_projection(Vector3 &a, Vector3 &b);
 
 };//namespace cml
 

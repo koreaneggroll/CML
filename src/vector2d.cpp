@@ -2,16 +2,16 @@
 
 
 cml::Vector2::Vector2(): x(0.0f), y(0.0f){}
-cml::Vector2::Vector2(double uX, double uY): x(uX), y(uY){}
+cml::Vector2::Vector2(float uX, float uY): x(uX), y(uY){}
 cml::Vector2::~Vector2(){}
 
 
 
-cml::Vector2 cml::scalar(double sc, Vector2& v){
+cml::Vector2 cml::scalar(float sc, Vector2& v){
     return Vector2(v.x*sc, v.y*sc);
 }
 
-// cml::Vector2 cml::Vector2::scalar(double sc){
+// cml::Vector2 cml::Vector2::scalar(float sc){
 //     return Vector2(this->x*sc, this->y*sc);
 // }
 
@@ -27,22 +27,22 @@ cml::Vector2 cml::cross(Vector2& a, Vector2& b){
     return Vector2(a.x * b.y, b.x * a.y);
 }
 
-double cml::dot(Vector2& a, Vector2& b){
+float cml::dot(Vector2& a, Vector2& b){
     return a.x * b.x + a.y * b.y;
 }
 
-double cml::magnitude(Vector2& v){
+float cml::magnitude(Vector2& v){
     return sqrt(pow(v.x, 2) + pow(v.y, 2));
 }
 
-double cml::angle(Vector2& v){
+float cml::angle(Vector2& v){
     //arc tangent
     return atan(v.y/v.x);
 }
 
 cml::Vector2 cml::unit(Vector2& v){
     //assigned to a variable to only be computed once
-    double vMagnitude = magnitude(v);
+    float vMagnitude = magnitude(v);
     return Vector2(v.x/vMagnitude, v.y/vMagnitude);
 }
 
@@ -51,7 +51,7 @@ cml::Vector2 cml::projection(Vector2& a, Vector2& b){
     return result;
 }
 
-double cml::scalar_projection(Vector2& a, Vector2& b){
+float cml::scalar_projection(Vector2& a, Vector2& b){
     return dot(b, a)/magnitude(a);
 }
 
@@ -84,11 +84,11 @@ cml::Vector2 cml::Vector2::operator*(const float s)const{
     return Vector2(this->x*s, this->y*s);
 }
 
-double cml::Vector2::operator*(const Vector2& v)const{
+float cml::Vector2::operator*(const Vector2& v)const{
     return x*v.x+y*v.y;
 }
 
-double cml::Vector2::dot(const Vector2& v)const{
+float cml::Vector2::dot(const Vector2& v)const{
     return x*v.x+y*v.y;
 }
 
@@ -134,7 +134,7 @@ cml::Vector2& cml::Vector2::operator=(const Vector2 &other){
 
 //swaps the values of the vector
 void cml::Vector2::swap(){
-    double temp = this->x;
+    float temp = this->x;
     this->x = this->y;
     this->y = temp;
 }
